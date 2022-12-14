@@ -1,0 +1,49 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.204);
+    z-index: 10;
+    height: 8vh;
+}
+
+.content-3 {
+    height: 90vh;
+}
+
+.hori-scroll {
+    overflow-y: scroll;
+}
+
+.hori-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.verti-scroll {
+    overflow-x: hidden;
+}
+
+.verti-scroll::-webkit-scrollbar {
+    width: 10px;
+}
+
+.verti-scroll::-webkit-scrollbar-thumb {
+    background: rgb(205, 1, 1);
+    border-radius: 10px;
+}
+
+.content-1 {
+    background: rgba(0, 0, 0, 0.681) url('http://drive.google.com/uc?export=view&id=11etio14Jnvir9c8U8ULkNVNYw-UeLWAT');
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode: darken;
+    height: 100vh;
+    text-align: justify;
+}
+
+.grad-active {
+    background-image: linear-gradient(to right, rgb(0, 4, 255), rgb(165, 71, 0));
+}
