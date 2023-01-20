@@ -7,7 +7,9 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-First of all, download code on this repository github
+<div>
+  <p>
+    First of all, download code on this repository github
 Then extract the .zip folder has been downloaded
 
 After that follow below steps from top to bottom:
@@ -28,3 +30,6 @@ After that follow below steps from top to bottom:
 12.3. In terminal, type "cd ..", then press enter and wait
 12.4. In terminal, type "php artisan storage:link", then press enter and wait
 13. Enjoy :D
+  </p>
+</div>
+
