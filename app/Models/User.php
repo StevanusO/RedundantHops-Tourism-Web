@@ -12,6 +12,10 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public function user_hasMany_post(){
+        return $this->hasMany(Post::class, 'user_id', 'id');
+    }
+
     /**
      * The attributes that are mass assignable.
      *
@@ -41,4 +45,5 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
 }
