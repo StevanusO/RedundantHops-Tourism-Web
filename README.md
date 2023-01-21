@@ -20,8 +20,8 @@
       First of all, download code on this repository github
       Then extract the .zip folder has been downloaded
       </br>
+       After that follow below steps from top to bottom:
       <ol>
-        After that follow below steps from top to bottom:
         <li>Open XAMPP</li>
         <li>Start the module "Apache" and "MySQL"</li>
         <li>Press actions "Admin" on module "MySQL"</li>
