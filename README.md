@@ -9,6 +9,9 @@
 
 <div>
   <p>
+    <b> Download the full manual guide on: https://bit.ly/3J4qayF</b>
+    <b> Just watch this if you bored to follow bellow steps or read manual guide: https://bit.ly/3iTSut3</b>
+    <br/>
     First of all, download code on this repository github
 Then extract the .zip folder has been downloaded
 
