@@ -9,30 +9,40 @@
 
 <div>
   <p>
-    <b> Download the full manual guide on: https://bit.ly/3J4qayF</b>
-    <b> Just watch this if you bored to follow bellow steps or read manual guide: https://bit.ly/3iTSut3</b>
+    <div>
+      <b> Download the full manual guide on: https://bit.ly/3J4qayF</b>
+    </div>
+    <div>
+      <b> Just watch this if you bored to follow below steps or read manual guide: https://bit.ly/3iTSut3</b>
+    </div>
     <br/>
-    First of all, download code on this repository github
-Then extract the .zip folder has been downloaded
-
-After that follow below steps from top to bottom:
-1. Open XAMPP  
-2. Start the module "Apache" and "MySQL"  
-3. Press actions "Admin" on module "MySQL"  
-4. Create empty database on xampp with name "redundanthops"  
-5. Open the code with vscode  
-6. Open terminal in vscode (Shortcut: ctrl + `)  
-7. In terminal, type "composer install", then press enter and wait  
-8. If error on step 7, then type "composer update" then press enter and wait, after that type again "composer install" then press enter and wait  
-9. In Terminal, type "php artisan migrate:refresh --seed", then press enter and wait  
-10. In terminal, type "php artisan serve" then open the given local host link in terminal  
-11. After clicked the given local host link it will direct user to landing page   
-12. If the image doesn't appear on landing page, then we must remove the storage from below steps:  
-12.1. In terminal, type "cd public", then press enter and wait  
-12.2. In terminal, type "rm storage", then press enter and wait  
-12.3. In terminal, type "cd ..", then press enter and wait  
-12.4. In terminal, type "php artisan storage:link", then press enter and wait  
-13. Enjoy :D  
+    <div>
+      First of all, download code on this repository github
+      Then extract the .zip folder has been downloaded
+      </br>
+      <ol>
+        After that follow below steps from top to bottom:
+        <li>Open XAMPP</li>
+        <li>Start the module "Apache" and "MySQL"</li>
+        <li>Press actions "Admin" on module "MySQL"</li>
+        <li>Create empty database on xampp with name "redundanthops"</li>
+        <li>Open the code with vscode</li>
+        <li>Open terminal in vscode (Shortcut: ctrl + `)</li>
+        <li>In terminal, type "composer install", then press enter and wait</li>
+        <li>If error on step 7, then type "composer update" then press enter and wait, after that type again "composer install" then press enter and wait</li>
+        <li>In Terminal, type "php artisan migrate:refresh --seed", then press enter and wait</li>
+        <li>In terminal, type "php artisan serve" then open the given local host link in terminal</li>
+        <li>After clicked the given local host link it will direct user to landing page</li>
+        <li>If the image doesn't appear on landing page, then we must remove the storage from below steps:</li>
+        <ul>
+          <li>12.1. In terminal, type "cd public", then press enter and wait</li>
+          <li>12.2. In terminal, type "rm storage", then press enter and wait</li>
+          <li>12.3. In terminal, type "cd ..", then press enter and wait</li>
+          <li>12.4. In terminal, type "php artisan storage:link", then press enter and wait</li>
+        </ul>
+        <li> Enjoy :D</li>
+      </ol>
+    </div>
   </p>
 </div>
 
