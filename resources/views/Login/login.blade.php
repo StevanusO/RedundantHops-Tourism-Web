@@ -19,7 +19,7 @@
     </div>
 
     <div class="p-form">
-        <form action="" enctype="multipart/form-data" method="POST" autocomplete="off">
+        <form action="login_backend" enctype="multipart/form-data" method="POST" autocomplete="off">
             @csrf
             @if ($errors->any())
                 <div class="text-warning py-2">
