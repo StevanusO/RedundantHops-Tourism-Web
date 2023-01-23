@@ -26,6 +26,9 @@ class PostController extends Controller
     }
 
     public function insert_review(Request $data) {
+        $data->validate([
+            "review" => "required"
+        ]);
         DB::table('posts')->insert([
             'user_id' => $data->user_id,
             'tourist_attraction_id'=> $data->tourist_attraction_id,
