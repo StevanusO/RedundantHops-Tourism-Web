@@ -5,6 +5,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\TouristAttractionController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\CheckLogged;
+use App\Http\Middleware\guestOnly;
 use App\Models\TouristAttraction;
 use Illuminate\Support\Facades\Route;
 
@@ -21,47 +22,47 @@ use Illuminate\Support\Facades\Route;
 
 Route::GET('/', [UserController::class, 'indexing_welcome_page'])->name('display_welcome_page');
 
-Route::GET('/login', [UserController::class, 'display_login_form'])->name('login')->middleware([CheckLogged::class]);
-Route::GET('/register', [UserController::class, 'display_regist_form'])->name('register')->middleware([CheckLogged::class]);
+Route::GET('/login', [UserController::class, 'display_login_form'])->name('login')->middleware([guestOnly::class]);
+Route::GET('/register', [UserController::class, 'display_regist_form'])->name('register')->middleware([guestOnly::class]);
 Route::GET('/tentang', [UserController::class, 'display_tentang'])->name('tentang');
 
 //
-Route::POST('/login', [AuthController::class, 'login'])->name('login_backend');
-Route::GET('/logout', [AuthController::class, 'logout'])->name('logout_backend');
+Route::POST('/login', [AuthController::class, 'login'])->name('login_backend')->middleware([guestOnly::class]);
+Route::GET('/logout', [AuthController::class, 'logout'])->name('logout_backend')->middleware([CheckLogged::class]);
 //register
-Route::POST('/register', [UserController::class, 'register_account'])->name('register_backend');
+Route::POST('/register', [UserController::class, 'register_account'])->name('register_backend')->middleware([guestOnly::class]);
 
 
 
 //testing
 Route::GET('/profile', [UserController::class, 'display_profile'])->name('profile')
-->middleware([CheckLogged::class]);
+    ->middleware([CheckLogged::class]);
 
 Route::GET('/update/profile', [UserController::class, 'display_update_profile_form'])->name('update_profile')
-->middleware([CheckLogged::class]);
+    ->middleware([CheckLogged::class]);
 
 Route::PATCH('/update/profile', [UserController::class, 'update_account'])->name('update_backend')
-->middleware([CheckLogged::class]);
+    ->middleware([CheckLogged::class]);
 
 Route::get('/liburan', [UserController::class, 'indexing_liburan_page'])->name('liburan')
-->middleware([CheckLogged::class]);
+    ->middleware([CheckLogged::class]);
 
 
 // Route::get('/detail/{id}', [])
 Route::get('/detail/{id}', [UserController::class, 'display_detail_page'])->name('detail')
-->middleware([CheckLogged::class]);
+    ->middleware([CheckLogged::class]);
 
 //searching liburan
 Route::get('/search/liburan', [UserController::class, 'search_keywords'])->name('search')
-->middleware([CheckLogged::class]);
+    ->middleware([CheckLogged::class]);
 
 
 //review
 Route::get('/liburan/review/{tourist_attraction_id}', [TouristAttractionController::class, 'display_review'])->name('review')
-->middleware([CheckLogged::class]);
+    ->middleware([CheckLogged::class]);
 
 Route::POST('/liburan/review/masukkan', [PostController::class, 'insert_review'])->name('insert_review')
-->middleware([CheckLogged::class]);
+    ->middleware([CheckLogged::class]);
 
 Route::PATCH('/liburan/review/edit', [PostController::class, 'postEdit'])->name('post_edit_logic');
 
