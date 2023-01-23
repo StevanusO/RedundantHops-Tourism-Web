@@ -21,8 +21,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::GET('/', [UserController::class, 'indexing_welcome_page'])->name('display_welcome_page');
 
-Route::GET('/login', [UserController::class, 'display_login_form'])->name('login');
-Route::GET('/register', [UserController::class, 'display_regist_form'])->name('register');
+Route::GET('/login', [UserController::class, 'display_login_form'])->name('login')->middleware([CheckLogged::class]);
+Route::GET('/register', [UserController::class, 'display_regist_form'])->name('register')->middleware([CheckLogged::class]);
 Route::GET('/tentang', [UserController::class, 'display_tentang'])->name('tentang');
 
 //
