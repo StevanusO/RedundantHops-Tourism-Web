@@ -24,7 +24,11 @@ class AuthController extends Controller
             return redirect()->route('display_welcome_page'); //Login berhasil
         }
         else{
-            $errorMsg = "Email atau kata sandi salah";
+            if(app()->getLocale()=="id"){
+                $errorMsg = "Email atau kata sandi salah";
+            }else{
+                $errorMsg = "Email or password wrong";
+            }
             return redirect()->back()->withErrors($errorMsg);
         }
     }

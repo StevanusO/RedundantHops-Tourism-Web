@@ -6,62 +6,51 @@
     <div class="nav-clone"></div>
     <div>
         <div class="ttg-part-1 d-flex flex-column justify-content-center align-items-center text-center">
-            <div class="fs-1 fw-bold py-3">Tentang Kami</div>
-            <div class="fs-5 w-50">TravelIND merupakan website  yang memungkinkan tourist 
-                untuk melihat informasi mengenai tempat-tempat wisata yang 
-                ada di Indonesia</div>
+            <div class="resp-title fw-bold py-3">{{__('data.about.title')}}</div>
+            <div class="resp-subtitle w-50">{{__('data.about.desc')}}</div>
         </div>
         <div class="ctr-ttg-2">
             <div class="bar">
-                <div class="fs-2 fw-bold">Sejarah</div>
+                <div class="resp-title-2 fw-bold">{{__('data.about.history.title')}}</div>
                 <br>
-                <div class="fs-5">Berawal dari tingginya minat wisatawan mancanegara akan destinasi wisata 
-                    di Indonesia setelah meredanya covid-19. Kami membangun travelind untuk mempermudah 
-                    wisatawan dalam memperoleh berbagai informasi dari destinasi yang berfokus di Indonesia.
+                <div class="resp-subtitle">
+                    {{__('data.about.history.desc_one')}}
                 </div>
                 <br>
-                <div class="fs-5">
-                    Berkat dukungan dari berbagai pihak, dengan bangga kami menghadirkan website yang 
-                    menyediakan informasi terupdate, lengkap dan akurat akan berbagai destinasi wisata yang 
-                    ada di indonesia.
+                <div class="resp-subtitle">
+                    {{__('data.about.history.desc_two')}}
                 </div>
             </div>
         </div>
         <div class="ctr-ttg-3">
             <div class="">
-                <div class="fs-2 fw-bold">
-                    Prinsip Kami
+                <div class="resp-title-2 fw-bold">
+                    {{__('data.about.principle.title')}}
                 </div>
-                <div class="mt-4 d-flex">
-                    <div class="w-50">
+                <div class="mt-4 ttg-pt-2">
+                    <div class="outer-w mb-4">
                         <div class="rect">
-                            <div class="fs-5 fw-bold">Terpercaya</div>
+                            <div class="resp-subtitle fw-bold">{{__('data.about.principle.first_principle.title')}}</div>
                             <div class="mt-2">
-                                Seluruh informasi yang ada seputar destinasi 
-                                wisata kami dapatkan langsung dari customer service 
-                                dari destinasi wisata tersebut.
+                                {{__('data.about.principle.first_principle.desc')}}
                             </div>
                         </div>
                     </div>
-                    <div class="w-50">
+                    <div class="outer-w mb-4">
                         <div class="rect">
-                            <div class="fs-5 fw-bold">Terkini</div>
+                            <div class="resp-subtitle fw-bold">{{__('data.about.principle.second_principle.title')}}</div>
                             <div class="mt-2">
-                                Seluruh informasi yang ada selalu di perbaharui 
-                                jika terdapat perubahan detail informasi dari destinasi 
-                                wisata tersebut.
+                                {{__('data.about.principle.second_principle.desc')}}
                             </div>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <div class="mt-4 w-50">
+                    <div class="outer-w">
                         <div class="rect">
-                            <div class="fs-5 fw-bold">Terlengkap</div>
+                            <div class="resp-subtitle fw-bold">{{__('data.about.principle.third_principle.title')}}</div>
                             <div class="mt-2">
-                                Menghadirkan informasi lengkap terkait detinasi wisata mulai 
-                                dari informasi umum sampai harga tiket masuk dan jam operasional 
-                                destinasi wisata tersebut. 
+                                {{__('data.about.principle.third_principle.desc')}} 
                             </div>
                         </div>
                     </div>

@@ -5,7 +5,7 @@
         Travel
       </div>
     </div>
-    <div class="w-50 d-flex justify-content-end align-items-center fw-bold right-foo">
+    <div class="w-50 d-flex justify-content-end align-items-center right-foo resp-subtitle">
       ©Copyright RedundantHops 2022
     </div>
   

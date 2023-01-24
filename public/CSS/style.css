@@ -227,6 +227,7 @@ footer {
 
 .ttg-part-1 {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/TTG-BG.png');
+    filter: brightness(85%);
     height: 90vh;
     background-size: cover;
     background-position: center center;
@@ -270,12 +271,6 @@ footer {
     backdrop-filter: blur(8.4px);
     -webkit-backdrop-filter: blur(8.4px);
     border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.pf-img img {
-    width: 180px;
-    height: 180px;
-    border-radius: 100%;
 }
 
 .profile-height {
@@ -412,6 +407,47 @@ footer {
     color: transparent;
 }
 
+.resp-form-text {
+    font-size: 16pt;
+}
+
+.resp-title {
+    font-size: 40pt;
+}
+
+.resp-title-2 {
+    font-size: 24pt;
+}
+
+.resp-subtitle {
+    font-size: 15pt;
+}
+
+.ttg-pt-2 {
+    display: flex;
+}
+
+.w-ctm, .outer-w {
+    width: 50%;
+}
+
+.nv-show-hide {
+    display: none;
+}
+
+.ctm-width {
+    width: 50%;
+}
+
+.img-profile {
+    width:180px; 
+    height:180px;
+}
+
+.crd-title, .auth-name {
+    font-size: 18pt;
+}
+
 @media only screen and (max-width: 995px) {
     .custom-crd {
         display: block;
@@ -441,3 +477,62 @@ footer {
     }
 }
 
+
+@media only screen and (max-width: 426px) {
+    p {
+        font-size: 10pt;
+    }
+    div, .resp-subtitle {
+        font-size: 10pt;
+    }
+
+    .resp-form-text {
+        font-size: 10pt;
+    }
+
+    .w-ctm {
+        width: 100% !important;
+    }
+
+    .ttg-part-1 {
+        height: 30vh;
+    }
+
+    .resp-title {
+        font-size: 20pt;
+    }
+
+    .resp-title-2 , .crd-title{
+        font-size: 14pt;
+    }
+
+    .auth-name {
+        font-size: 12pt;
+    }
+    
+    .ttg-pt-2 {
+        display: block;
+    }
+
+    .outer-w {
+        width: 100% !important;
+    }
+
+    .nv-hide {
+        display: none;
+    }
+
+    .nv-show-hide {
+        display: block;
+    }
+
+    .ctm-width {
+        width: 80%;
+    }
+
+    .img-profile {
+        width:80px; 
+        height:80px;
+    }
+
+}

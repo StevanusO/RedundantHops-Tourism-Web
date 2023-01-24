@@ -7,13 +7,12 @@
 
     </div>
     <div class="custom-bg w-100">
-        <div class="w-50 p-in">
+        <div class="w-ctm p-in">
             <div class="fs-2 fw-bold">
-                Waktunya berwisata
+                {{__('data.login.title')}}
             </div>
             <div>
-                Masukkan nama dan kata sandi pengguna agar 
-                dapat menggunakan fitur website secara sepenuhnya,
+                {{__('data.login.desc')}}
             </div>
         </div>
     </div>
@@ -28,20 +27,21 @@
                     @endforeach
                 </div>
             @endif
+            
             <div class="custom-bdr p-3 mb-4 rounded d-flex align-items-center">
-                <label for="nama" class="custom-txt fw-bold fs-5 l-side-form">Email</label>
-                <input class="ipt-form" type="text" placeholder="Masukkan email anda" id="email" name="email">
+                <label for="nama" class="custom-txt fw-bold resp-form-text l-side-form">{{__('data.login.email.title')}}</label>
+                <input class="ipt-form" type="text" placeholder="{{__('data.login.email.placeholder')}}" id="email" name="email">
             </div>            
             <div class="custom-bdr p-3 mb-4 rounded d-flex align-items-center">
-                <label for="password" class="custom-txt fw-bold fs-5 l-side-form">Kata Sandi</label>
-                <input class="ipt-form" type="password" placeholder="Masukkan kata sandi Anda" id="password" name="pw">
+                <label for="password" class="custom-txt fw-bold resp-form-text l-side-form">{{__('data.login.password.title')}}</label>
+                <input class="ipt-form" type="password" placeholder="{{__('data.login.password.placeholder')}}" id="password" name="pw">
             </div>  
             <br>
             <div class="w-100 d-flex justify-content-end">
                 <div class="d-flex flex-column justify-content-center align-items-center">
-                    <button class="btn-regular rounded" type="submit">Masuk</button>
-                    <div class="fw-bold text-center">Belum punya akun? 
-                        <a href="{{route('register')}}" class="text-reset text-decoration-none"><span class="custom-txt">Daftar</span></a></div>   
+                    <button class="btn-regular rounded" type="submit">{{__('data.login.btn_login')}}</button>
+                    <div class="fw-bold text-center">{{__('data.login.req.title')}}
+                        <a href="{{route('register')}}" class="text-reset text-decoration-none"><span class="custom-txt">{{__('data.login.req.btn_regist')}}</span></a></div>   
                 </div> 
             </div>
         </form>

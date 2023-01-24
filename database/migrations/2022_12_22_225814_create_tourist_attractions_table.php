@@ -17,7 +17,8 @@ class CreateTouristAttractionsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('image');
-            $table->string('description', 1200);
+            $table->string('description_id', 1200);
+            $table->string('description_en', 1200);
             $table->string('location');
             $table->string('price_estimate');
             $table->string('time');

@@ -11,11 +11,15 @@
             {{$tourist->name}} 
         </div>
         <p class="detail-desc">
-            {{$tourist->description}}
+            @if (app()->getLocale() == "id")
+                {{$tourist->description_id}}
+            @else
+                {{$tourist->description_en}}
+            @endif
         </p>
         <div class="bg-light text-dark rounded p-2 mb-4 mt-5">
             <div class="d-flex justify-content-between align-items-center" id="title-label">
-                <div class="fw-bold fs-4 d-flex align-items-center"><span class="bg-success rounded-circle me-2" style="display:inline-block; width:20px; height:20px;"></span>Lokasi</div>
+                <div class="fw-bold fs-4 d-flex align-items-center"><span class="bg-success rounded-circle me-2" style="display:inline-block; width:20px; height:20px;"></span>{{__('data.detail.location')}}</div>
                 <div class="dropdown-toggle"></div>
             </div>
             
@@ -25,45 +29,61 @@
         </div>
         <div class="bg-light text-dark rounded p-2 mb-4"  id="title-label-2">
             <div class="d-flex justify-content-between align-items-center" id="title-label">
-                <div class="fw-bold fs-4 d-flex align-items-center"><span class="bg-success rounded-circle me-2" style="display:inline-block; width:20px; height:20px;"></span>Harga Tiket</div>
+                <div class="fw-bold fs-4 d-flex align-items-center"><span class="bg-success rounded-circle me-2" style="display:inline-block; width:20px; height:20px;"></span>{{__('data.detail.price')}}</div>
                 <div class="dropdown-toggle"></div>
             </div>
             <div class="temp-value-label mt-2" id="value-label-2">
-                {{$tourist->price_estimate}}
+                @if (app()->getLocale() == 'en')
+                    @if ($tourist->price_estimate == "Gratis")
+                        Free
+                    @else
+                        {{$tourist->price_estimate}}
+                    @endif
+                @else
+                    {{$tourist->price_estimate}}
+                @endif
             </div>
         </div>
         <div class="bg-light text-dark rounded p-2 mb-4" id="title-label-3">
             <div class="d-flex justify-content-between align-items-center" id="title-label">
-                <div class="fw-bold fs-4 d-flex align-items-center"><span class="bg-success rounded-circle me-2" style="display:inline-block; width:20px; height:20px;"></span>Waktu Operasional</div>
+                <div class="fw-bold fs-4 d-flex align-items-center"><span class="bg-success rounded-circle me-2" style="display:inline-block; width:20px; height:20px;"></span>{{__('data.detail.time')}}</div>
                 <div class="dropdown-toggle"></div>
             </div>
             <div class="temp-value-label mt-2" id="value-label-3">
-                {{$tourist->time}} (WIB)
+                @if (app()->getLocale() == "en")
+                    @if ($tourist->time == "24 Jam")
+                        24 Hours (WIB)
+                    @else
+                        {{$tourist->time}} (WIB)
+                    @endif
+                @else
+                    {{$tourist->time}} (WIB)
+                @endif
             </div>
         </div>
     </div>
 
     {{-- Review --}}
     <div class="container my-5">
-        <div class="fs-1 fw-bold custom-txt mb-3">Review</div>
+        <div class="fs-1 fw-bold custom-txt mb-3">{{__('data.detail.title')}}</div>
         {{-- Tempat looping review --}}
         <div class="ctr-rev">
             <div class="frontend-view pe-3">
                 @if (count($post) < 1)
                     <div class="fst-italic text-white opacity-50 fs-5 h-100 d-flex justify-content-center align-items-center">
-                        Jadilah orang pertama yang memberi ulasan
+                        {{__('data.detail.empty')}}
                     </div>
                 @else
                     <div class="d-none">
                         {{$tes = 0}}
                     </div>
                     @foreach ($post as $data)
-                        <div class="bor-btm ps-1 mb-4">
+                        <div class="bor-btm ps-1 mt-1 mb-4">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div class="w-50 d-flex">
-                                    <div class="rounded rounded" style="width: 70px; height: 70px; background-image: url({{asset('storage/avatars/' . $data->post_belongsTo_user->image)}}); background-size: cover; background-position: center center"></div>
+                                    <div class="rounded" style="width: 70px; height: 70px; background-image: url({{asset('storage/avatars/' . $data->post_belongsTo_user->image)}}); background-size: cover; background-position: center center"></div>
                                     <div class="ps-3 d-flex flex-column justify-content-center">
-                                        <div class="fw-bold custom-txt fs-4">{{$data->post_belongsTo_user->name}}</div>
+                                        <div class="fw-bold custom-txt auth-name">{{$data->post_belongsTo_user->name}}</div>
                                         <div class="date">{{$data->time}}</div>
                                     </div>
                                 </div>
@@ -104,8 +124,8 @@
                                             @method('patch')
                                             <div class="d-flex justify-content-between me-3">
                                                 <input type="text" style="visibility: hidden; display: none" name="id" value="{{$data->id}}">
-                                                <input type="text" class="edit" name="review" placeholder="ubah review Anda" id="review">
-                                                <button type="submit" class="btn-edit">Ubah</button>
+                                                <input type="text" class="edit" name="review" placeholder="{{__('data.detail.edit.placeholder')}}" id="review">
+                                                <button type="submit" class="btn-edit">{{__('data.detail.edit.btn_chg')}}</button>
                                             </div>
                                         </form>
                                     @endif
@@ -120,7 +140,7 @@
                 @csrf
                 <input type="text" name="user_id" style="visibility: hidden; display: none" value="{{Auth::user()->id}}">
                 <input type="text" name="tourist_attraction_id" style="visibility: hidden; display: none" value="{{$tourist->id}}">
-                <input class="comment-view" type="text" name="review" placeholder="Masukkan review Anda">
+                <input class="comment-view" type="text" name="review" placeholder="{{__('data.detail.placeholder')}}">
                 <button class="send-review" type="submit">&#10146;</button>
             </form>
         </div>

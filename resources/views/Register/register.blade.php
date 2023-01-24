@@ -7,13 +7,12 @@
 
 </div>
 <div class="custom-bg w-100">
-    <div class="w-50 p-in">
-        <div class="fs-2 fw-bold">
-            Daftarkan akun Anda
+    <div class="w-ctm p-in">
+        <div class="fs-2 fw-bold resp-title">
+            {{__('data.register.title')}}
         </div>
         <div>
-            Daftarkan akun Anda, dapatkan segala informasi 
-            wisata yang terbaru dan terpercaya
+            {{__('data.register.desc')}}
         </div>
     </div>
 </div>
@@ -23,55 +22,55 @@
         @csrf
        
         @error('user_name')
-            <p class="text-warning">Harap cek kembali user_name yang digunakan</p>
+            <p class="text-warning">{{__('data.register.error.username')}}</p>
         @enderror
         
         @error('email')
-            <p class="text-warning">Harap cek kembali email yang digunakan</p>
+            <p class="text-warning">{{__('data.register.error.email')}}</p>
         @enderror
         
         @error('pw')
-            <p class="text-warning">Harap cek kembali kata sandi & konfirmasi kata sandi</p>
+            <p class="text-warning">{{__('data.register.error.pw')}}</p>
         @enderror
         
         @error('confirm-pw')
-        <p class="text-warning">Konfirmasi kata sandi wajib di isi</p>
+        <p class="text-warning">{{__('data.register.error.confirm_pw')}}</p>
         @enderror
 
         @error('profile-img')
-        <p class="text-warning">Harap mengunggah gambar</p>
+        <p class="text-warning">{{__('data.register.error.profile_img')}}</p>
         @enderror
         
         <div class="custom-bdr p-3 mb-4 rounded d-flex align-items-center">
-            <label for="nama" class="custom-txt fw-bold fs-5 l-side-form">Nama Pengguna</label>
-            <input class="ipt-form" type="text" placeholder="Masukkan nama Anda" id="nama" name="user_name">
+            <label for="nama" class="custom-txt fw-bold resp-form-text l-side-form">{{__('data.register.username.title')}}</label>
+            <input class="ipt-form" type="text" placeholder="{{__('data.register.username.placeholder')}}" id="nama" name="user_name">
         </div>            
         <div class="custom-bdr p-3 mb-4 rounded d-flex align-items-center">
-            <label for="email" class="custom-txt fw-bold fs-5 l-side-form">Email</label>
-            <input class="ipt-form" type="email" placeholder="Masukkan email Anda" id="email" name="email">
+            <label for="email" class="custom-txt fw-bold resp-form-text l-side-form">{{__('data.register.email.title')}}</label>
+            <input class="ipt-form" type="email" placeholder="{{__('data.register.email.placeholder')}}" id="email" name="email">
         </div>  
 
         <div class="custom-bdr p-3 mb-4 rounded d-flex align-items-center">
-            <label for="password" class="custom-txt fw-bold fs-5 l-side-form">Kata Sandi</label>
-            <input class="ipt-form" type="password" placeholder="Masukkan kata sandi Anda" id="password" name="pw">
+            <label for="password" class="custom-txt fw-bold resp-form-text l-side-form">{{__('data.register.password.title')}}</label>
+            <input class="ipt-form" type="password" placeholder="{{__('data.register.password.placeholder')}}" id="password" name="pw">
         </div>  
         
         <div class="custom-bdr p-3 mb-4 rounded d-flex align-items-center">
-            <label for="confirm-password" class="custom-txt fw-bold fs-5 l-side-form">Konfirmasi Kata Sandi</label>
-            <input class="ipt-form h-100" type="password" placeholder="Masukkan kembali kata sandi Anda" id="confirm-password" name="confirm-pw">
+            <label for="confirm-password" class="custom-txt fw-bold resp-form-text l-side-form">{{__('data.register.confirm_password.title')}}</label>
+            <input class="ipt-form h-100" type="password" placeholder="{{__('data.register.confirm_password.placeholder')}}" id="confirm-password" name="confirm-pw">
         </div>  
 
         {{-- <div class="custom-bdr p-3 mb-4 rounded d-flex align-items-center">
-            <label for="profile" class="custom-txt fw-bold fs-5 l-side-form">Gambar Profil</label>
+            <label for="profile" class="custom-txt fw-bold resp-form-text l-side-form">Gambar Profil</label>
             <input type="file" class="custom-bg rounded text-light" id="profile" name="profile-img" accept="image/png, image/jpg, image/jpeg">
         </div> --}}
 
         <br>
         <div class="w-100 d-flex justify-content-end">
             <div class="d-flex flex-column justify-content-center align-items-center">
-                <button class="btn-regular rounded" type="submit">Daftar</button>
-                <div class="fw-bold text-center">Sudah punya akun? 
-                    <a href="{{route('login')}}" class="text-reset text-decoration-none"><span class="custom-txt">Masuk</span></a></div>   
+                <button class="btn-regular rounded" type="submit">{{__('data.register.btn_regist')}}</button>
+                <div class="fw-bold text-center">{{__('data.register.req.title')}}
+                    <a href="{{route('login')}}" class="text-reset text-decoration-none"><span class="custom-txt">{{__('data.register.req.btn_login')}}</span></a></div>   
             </div> 
         </div>
     </form>
