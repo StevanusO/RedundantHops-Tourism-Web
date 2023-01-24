@@ -15,6 +15,13 @@
     <div>
       <b> Just watch this if you bored to follow below steps or read manual guide: https://bit.ly/3iTSut3</b>
     </div>
+      </br>
+     <div>
+      <b>Wanna watch our video teaser? Click this link: </b>
+    </div>
+    <div>
+      <b>Already installed, but don't know how to use? Watch this: </b>
+    </div>
     <br/>
     <div>
       First of all, download code on this repository github
