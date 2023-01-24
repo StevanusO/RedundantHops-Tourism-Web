@@ -1,24 +1,24 @@
 @extends('template')
 
-@section('title', '| Register')
+@section('title', '| Liburan')
 
 @section('content')
 <div class="nav-clone"></div>
 <div class="content-2">
 
     <div class="fs-2 fw-bold text-center w-100 py-4">
-        Liburan  
+        {{__('data.travel.title')}} 
     </div>
       <div class="w-100 my-4 d-flex align-items-center justify-content-between">
         <form class="w-100 ms-2 text-center" action="{{route('search')}}" enctype="multipart/form-data" method="GET">
           @csrf
-          <input type="search" class="sch w-50 p-1" name="keywords" placeholder="Cari nama tempat wisata...">
-          <button type="submit" class="sch-btn p-1">Search</button>
+          <input type="search" class="sch w-50 p-1" name="keywords" placeholder="{{__('data.travel.placeholder')}}">
+          <button type="submit" class="sch-btn p-1">{{__('data.travel.btn_sch')}}</button>
         </form>
       </div> 
     @if (count($pass_data)<1)
     <div class="h-none-data fst-italic text-white opacity-50 fs-5 d-flex justify-content-center align-items-center">
-      Data Tidak Ada
+      {{__('data.travel.empty')}}
     </div>
     @else
       <div class="row d-flex justify-content-center container gap-3">
@@ -28,8 +28,12 @@
               <div class="rounded border-0" style="width:100%; height: 140px; background-image: url({{$data->image}}); background-size: cover; background-position: center center; background-repeat: no-repeat"></div>
             </div>
             <div class="">
-              <div class="fw-bold pb-2" style="font-size: 2vw">{{$data->name}}</div>
-              <div class="fs-6 text-reset desc-card">{{$data->description}}</div>
+              <div class="fw-bold pb-2 crd-title">{{$data->name}}</div>
+              @if (app()->getLocale() == "id")
+                <div class="fs-6 text-reset desc-card">{{$data->description_id}}</div>
+              @else
+                <div class="fs-6 text-reset desc-card">{{$data->description_en}}</div>
+              @endif
               <a href="{{route('review', ['tourist_attraction_id' => $data->id])}}" class="btn-detail">Detail</a>
             </div>
           </div> 

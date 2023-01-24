@@ -6,8 +6,8 @@ use App\Http\Controllers\TouristAttractionController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\CheckLogged;
 use App\Http\Middleware\guestOnly;
-use App\Models\TouristAttraction;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session as FacadesSession;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,18 +19,28 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Multiple Language
+Route::get('locale/{locale}', function($lang){
+    FacadesSession::put('locale', $lang);
+    return redirect()->back();
+});
 
 Route::GET('/', [UserController::class, 'indexing_welcome_page'])->name('display_welcome_page');
 
-Route::GET('/login', [UserController::class, 'display_login_form'])->name('login')->middleware([guestOnly::class]);
-Route::GET('/register', [UserController::class, 'display_regist_form'])->name('register')->middleware([guestOnly::class]);
+
+Route::GET('/login', [UserController::class, 'display_login_form'])->name('login')
+    ->middleware([guestOnly::class]);
+
+Route::GET('/register', [UserController::class, 'display_regist_form'])->name('register')
+    ->middleware([guestOnly::class]);
+
 Route::GET('/tentang', [UserController::class, 'display_tentang'])->name('tentang');
 
 //
-Route::POST('/login', [AuthController::class, 'login'])->name('login_backend')->middleware([guestOnly::class]);
-Route::GET('/logout', [AuthController::class, 'logout'])->name('logout_backend')->middleware([CheckLogged::class]);
+Route::POST('/login', [AuthController::class, 'login'])->name('login_backend');
+Route::GET('/logout', [AuthController::class, 'logout'])->name('logout_backend');
 //register
-Route::POST('/register', [UserController::class, 'register_account'])->name('register_backend')->middleware([guestOnly::class]);
+Route::POST('/register', [UserController::class, 'register_account'])->name('register_backend');
 
 
 
