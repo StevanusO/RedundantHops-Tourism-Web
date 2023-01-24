@@ -1,0 +1,15 @@
+<!-- Footer -->
+  <footer class="d-flex justify-content-between">
+    <div class="w-50 d-flex justify-content-center align-items-center">
+      <div class="fs-1 fw-bold left-foo d-flex justify-content-center align-items-center">
+        Travel
+      </div>
+    </div>
+    <div class="w-50 d-flex justify-content-end align-items-center right-foo resp-subtitle">
+      ©Copyright RedundantHops 2022
+    </div>
+  
+  </footer>
+</div>
+<!-- Footer -->
+<?php /**PATH C:\BINUS5\WEB_PROG\LEC\PROJECT_LECTURE_GROUP\Revice_RedundantHops_MultiLang\resources\views/footer.blade.php ENDPATH**/ ?>
