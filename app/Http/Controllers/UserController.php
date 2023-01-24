@@ -54,12 +54,6 @@ class UserController extends Controller
             'confirm-pw' => 'required',
         ]);
 
-        // $object = $data->file('profile-img');
-        // $name = $object->getClientOriginalName();
-        // $extension = $object->getClientOriginalExtension();
-        // $file_name = $name . time() . '.' . $extension;
-        // $object->storeAs('public/avatars', $file_name);
-
         DB::table('users')->insert([
             'name' => $data->user_name,
             'email' => $data->email,
@@ -72,14 +66,6 @@ class UserController extends Controller
     }
 
     public function update_account(Request $data){
-
-        // $data->validate([
-        //     'user_name' => 'required',
-        //     'email' => 'required|unique:users,email',
-        //     'pw' => 'required|same:confirm-pw',
-        //     'confirm-pw' => 'required',
-        // ]);
-        // $file_name = $data->profile;
 
         $val_name = $data->user_name;
         $val_pw = $data->pw;
