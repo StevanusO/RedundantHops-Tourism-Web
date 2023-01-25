@@ -22,7 +22,11 @@
     <div>
       <b>Already installed, but don't know how to use? Watch this: https://youtu.be/VtKy8kkXsaI</b>
     </div>
-    <br/>
+    </br>
+      <div>
+        <b>Check our prototype on: https://www.figma.com/file/MJ58lOW4ySIAtZKcAwZ2iX/Prototype?t=3t6PFv4LGzL7FSqn-1</b>
+      </div>
+    </br>
     <div>
       First of all, download code on this repository github
       Then extract the .zip folder has been downloaded
