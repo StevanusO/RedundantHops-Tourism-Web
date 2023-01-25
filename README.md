@@ -20,7 +20,7 @@
       <b>Wanna watch our video teaser? Click this link: </b>
     </div>
     <div>
-      <b>Already installed, but don't know how to use? Watch this: </b>
+      <b>Already installed, but don't know how to use? Watch this: https://youtu.be/VtKy8kkXsaI</b>
     </div>
     <br/>
     <div>
