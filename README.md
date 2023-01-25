@@ -17,7 +17,7 @@
     </div>
       </br>
      <div>
-      <b>Wanna watch our video teaser? Click this link: </b>
+      <b>Wanna watch our video teaser? Click this link: https://youtu.be/7IBMoO-U1Hs</b>
     </div>
     <div>
       <b>Already installed, but don't know how to use? Watch this: https://youtu.be/VtKy8kkXsaI</b>
