@@ -27,15 +27,30 @@
                     @endforeach
                 </div>
             @endif
-            
-            <div class="custom-bdr p-3 mb-4 rounded d-flex align-items-center">
-                <label for="nama" class="custom-txt fw-bold resp-form-text l-side-form">{{__('data.login.email.title')}}</label>
+              
+            {{-- email --}}
+            <div class="mt-3 mb-4">
+                <div>
+                    <label for="email" class="fs-4 custom-txt mb-2">
+                        {{__('data.login.email.title')}}
+                    </label>
+                </div>
                 <input class="ipt-form" type="text" placeholder="{{__('data.login.email.placeholder')}}" id="email" name="email">
-            </div>            
-            <div class="custom-bdr p-3 mb-4 rounded d-flex align-items-center">
-                <label for="password" class="custom-txt fw-bold resp-form-text l-side-form">{{__('data.login.password.title')}}</label>
+                <div class="bar-b"></div>
+            </div>
+
+            {{-- Kata Sandi --}}
+            <div class="mt-3 mb-4">
+                <div>
+                    <label for="pw" class="fs-4 custom-txt mb-2">
+                        {{__('data.login.password.title')}}
+                    </label>
+                </div>
                 <input class="ipt-form" type="password" placeholder="{{__('data.login.password.placeholder')}}" id="password" name="pw">
-            </div>  
+                <div class="bar-b"></div>
+            </div>
+
+
             <br>
             <div class="w-100 d-flex justify-content-end">
                 <div class="d-flex flex-column justify-content-center align-items-center">

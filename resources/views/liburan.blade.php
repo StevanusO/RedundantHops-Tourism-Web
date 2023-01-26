@@ -23,16 +23,16 @@
     @else
       <div class="row d-flex justify-content-center container gap-3">
         @foreach ($pass_data as $data)
-          <div class="col-sm-3 custom-bg rounded text-light p-2 card-size">
+          <div class="col-sm-3 custom-bg-card rounded text-light p-2 card-size">
             <div class="pb-1">
-              <div class="rounded border-0" style="width:100%; height: 140px; background-image: url({{$data->image}}); background-size: cover; background-position: center center; background-repeat: no-repeat"></div>
+              <div class="rounded border-0" style="width:100%; height: 180px; background-image: url({{$data->image}}); background-size: cover; background-position: center center; background-repeat: no-repeat"></div>
             </div>
-            <div class="">
-              <div class="fw-bold pb-2 crd-title">{{$data->name}}</div>
+            <div class="mt-2">
+              <div class="fw-bold custom-txt pb-2 crd-title">{{$data->name}}</div>
               @if (app()->getLocale() == "id")
-                <div class="fs-6 text-reset desc-card">{{$data->description_id}}</div>
+                <div class="fs-6 desc-card">{{$data->description_id}}</div>
               @else
-                <div class="fs-6 text-reset desc-card">{{$data->description_en}}</div>
+                <div class="fs-6 desc-card">{{$data->description_en}}</div>
               @endif
               <a href="{{route('review', ['tourist_attraction_id' => $data->id])}}" class="btn-detail">Detail</a>
             </div>

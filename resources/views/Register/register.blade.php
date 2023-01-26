@@ -18,52 +18,67 @@
 </div>
 
 <div class="p-form">
-    <form action="{{route('register_backend')}}" enctype="multipart/form-data" method="POST" autocomplete="on">
+    <form action="{{route('register_backend')}}" enctype="multipart/form-data" method="POST" autocomplete="off">
         @csrf
-       
-        @error('user_name')
-            <p class="text-warning">{{__('data.register.error.username')}}</p>
-        @enderror
         
-        @error('email')
+        {{-- Nama pengguna --}}
+        <div class="mt-3 mb-4">
+            <div>
+                <label for="user_name" class="fs-4 custom-txt mb-2">
+                    {{__('data.register.username.title')}}
+                </label>
+            </div>
+            <input class="ipt-form" type="text" placeholder="{{__('data.register.username.placeholder')}}" id="nama" name="user_name">
+            <div class="bar-b"></div>
+            @error('user_name')
+                <p class="text-warning">{{__('data.register.error.username')}}</p>
+            @enderror
+        </div>
+
+        {{-- Email --}}
+        <div class="my-4">
+            <div>
+                <label for="email" class="fs-4 custom-txt mb-2">
+                    {{__('data.register.email.title')}}
+                </label>
+            </div>
+            <input class="ipt-form" type="email" placeholder="{{__('data.register.email.placeholder')}}" id="email" name="email">
+            <div class="bar-b"></div>
+            @error('email')
             <p class="text-warning">{{__('data.register.error.email')}}</p>
         @enderror
-        
-        @error('pw')
+        </div>
+
+        {{-- Kata Sandi --}}
+        <div class="my-4">
+            <div>
+                <label for="pw" class="fs-4 custom-txt mb-2">
+                    {{__('data.register.password.title')}}
+                </label>
+            </div>
+            <input class="ipt-form" type="password" placeholder="{{__('data.register.password.placeholder')}}" id="password" name="pw">
+            <div class="bar-b"></div>
+            @error('pw')
             <p class="text-warning">{{__('data.register.error.pw')}}</p>
         @enderror
-        
+        </div>
+
+        {{-- Konfirma Kata Sandi --}}
+        <div class="my-4">
+            <div>
+                <label for="confirm-pw" class="fs-4 custom-txt mb-2">
+                    {{__('data.register.confirm_password.title')}}
+                </label>
+            </div>
+            <input class="ipt-form h-100" type="password" placeholder="{{__('data.register.confirm_password.placeholder')}}" id="confirm-password" name="confirm-pw">
+            <div class="bar-b"></div>
+            
         @error('confirm-pw')
         <p class="text-warning">{{__('data.register.error.confirm_pw')}}</p>
         @enderror
-
-        @error('profile-img')
-        <p class="text-warning">{{__('data.register.error.profile_img')}}</p>
-        @enderror
+        </div>
         
-        <div class="custom-bdr p-3 mb-4 rounded d-flex align-items-center">
-            <label for="nama" class="custom-txt fw-bold resp-form-text l-side-form">{{__('data.register.username.title')}}</label>
-            <input class="ipt-form" type="text" placeholder="{{__('data.register.username.placeholder')}}" id="nama" name="user_name">
-        </div>            
-        <div class="custom-bdr p-3 mb-4 rounded d-flex align-items-center">
-            <label for="email" class="custom-txt fw-bold resp-form-text l-side-form">{{__('data.register.email.title')}}</label>
-            <input class="ipt-form" type="email" placeholder="{{__('data.register.email.placeholder')}}" id="email" name="email">
-        </div>  
-
-        <div class="custom-bdr p-3 mb-4 rounded d-flex align-items-center">
-            <label for="password" class="custom-txt fw-bold resp-form-text l-side-form">{{__('data.register.password.title')}}</label>
-            <input class="ipt-form" type="password" placeholder="{{__('data.register.password.placeholder')}}" id="password" name="pw">
-        </div>  
-        
-        <div class="custom-bdr p-3 mb-4 rounded d-flex align-items-center">
-            <label for="confirm-password" class="custom-txt fw-bold resp-form-text l-side-form">{{__('data.register.confirm_password.title')}}</label>
-            <input class="ipt-form h-100" type="password" placeholder="{{__('data.register.confirm_password.placeholder')}}" id="confirm-password" name="confirm-pw">
-        </div>  
-
-        {{-- <div class="custom-bdr p-3 mb-4 rounded d-flex align-items-center">
-            <label for="profile" class="custom-txt fw-bold resp-form-text l-side-form">Gambar Profil</label>
-            <input type="file" class="custom-bg rounded text-light" id="profile" name="profile-img" accept="image/png, image/jpg, image/jpeg">
-        </div> --}}
+     
 
         <br>
         <div class="w-100 d-flex justify-content-end">
