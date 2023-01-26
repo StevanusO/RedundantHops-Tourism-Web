@@ -32,21 +32,39 @@
         <?php echo method_field('patch'); ?>
         <input type="hidden" name="id" value="<?php echo e(Auth::user()->id); ?>">
 
-        <div class="custom-bdr p-3 mb-4 rounded d-flex align-items-center">
-            <label for="nama" class="custom-txt fw-bold resp-form-text l-side-form"><?php echo e(__('data.change_profile.username.title')); ?></label>
+        
+        <div class="mt-3 mb-4">
+            <div>
+                <label for="nama" class="fs-4 custom-txt mb-2">
+                    <?php echo e(__('data.change_profile.username.title')); ?>
+
+                </label>
+            </div>
             <input class="ipt-form" type="text" placeholder="<?php echo e(__('data.change_profile.username.placeholder')); ?>" id="nama" name="user_name">
-        </div>  
+            <div class="bar-b"></div>
+        </div>
 
+        <div class="my-4">
+            <div>
+                <label for="pw" class="fs-4 custom-txt mb-2">
+                    <?php echo e(__('data.change_profile.password.title')); ?>
 
-        <div class="custom-bdr p-3 mb-4 rounded d-flex align-items-center">
-            <label for="password" class="custom-txt fw-bold resp-form-text l-side-form"><?php echo e(__('data.change_profile.password.title')); ?></label>
+                </label>
+            </div>
             <input class="ipt-form" type="password" placeholder="<?php echo e(__('data.change_profile.password.placeholder')); ?>" id="password" name="pw">
-        </div>  
+            <div class="bar-b"></div>
+        </div>
 
-        <div class="custom-bdr p-3 mb-4 rounded d-flex align-items-center">
-            <label for="profile" class="custom-txt fw-bold resp-form-text l-side-form"><?php echo e(__('data.change_profile.image.title')); ?></label>
+        <div class="my-4">
+            <div>
+                <label for="pw" class="fs-4 custom-txt mb-2">
+                    <?php echo e(__('data.change_profile.image.title')); ?>
+
+                </label>
+            </div>
             <input type="file" class="custom-bg rounded text-light" id="profile" name="profile" accept="image/png, image/jpg, image/jpeg">
         </div>
+
         <br>
         <div class="w-100 d-flex justify-content-end">
             <div class="d-flex flex-column pe-3 justify-content-center align-items-center">

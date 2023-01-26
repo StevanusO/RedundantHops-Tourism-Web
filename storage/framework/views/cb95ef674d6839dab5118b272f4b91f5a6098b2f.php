@@ -20,21 +20,42 @@
 </div>
 
 <div class="p-form">
-    <form action="<?php echo e(route('register_backend')); ?>" enctype="multipart/form-data" method="POST" autocomplete="on">
+    <form action="<?php echo e(route('register_backend')); ?>" enctype="multipart/form-data" method="POST" autocomplete="off">
         <?php echo csrf_field(); ?>
-       
-        <?php $__errorArgs = ['user_name'];
+        
+        
+        <div class="mt-3 mb-4">
+            <div>
+                <label for="user_name" class="fs-4 custom-txt mb-2">
+                    <?php echo e(__('data.register.username.title')); ?>
+
+                </label>
+            </div>
+            <input class="ipt-form" type="text" placeholder="<?php echo e(__('data.register.username.placeholder')); ?>" id="nama" name="user_name">
+            <div class="bar-b"></div>
+            <?php $__errorArgs = ['user_name'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?>
-            <p class="text-warning"><?php echo e(__('data.register.error.username')); ?></p>
-        <?php unset($message);
+                <p class="text-warning"><?php echo e(__('data.register.error.username')); ?></p>
+            <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+        </div>
+
         
-        <?php $__errorArgs = ['email'];
+        <div class="my-4">
+            <div>
+                <label for="email" class="fs-4 custom-txt mb-2">
+                    <?php echo e(__('data.register.email.title')); ?>
+
+                </label>
+            </div>
+            <input class="ipt-form" type="email" placeholder="<?php echo e(__('data.register.email.placeholder')); ?>" id="email" name="email">
+            <div class="bar-b"></div>
+            <?php $__errorArgs = ['email'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -44,8 +65,19 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+        </div>
+
         
-        <?php $__errorArgs = ['pw'];
+        <div class="my-4">
+            <div>
+                <label for="pw" class="fs-4 custom-txt mb-2">
+                    <?php echo e(__('data.register.password.title')); ?>
+
+                </label>
+            </div>
+            <input class="ipt-form" type="password" placeholder="<?php echo e(__('data.register.password.placeholder')); ?>" id="password" name="pw">
+            <div class="bar-b"></div>
+            <?php $__errorArgs = ['pw'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -55,7 +87,19 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
+        </div>
+
         
+        <div class="my-4">
+            <div>
+                <label for="confirm-pw" class="fs-4 custom-txt mb-2">
+                    <?php echo e(__('data.register.confirm_password.title')); ?>
+
+                </label>
+            </div>
+            <input class="ipt-form h-100" type="password" placeholder="<?php echo e(__('data.register.confirm_password.placeholder')); ?>" id="confirm-password" name="confirm-pw">
+            <div class="bar-b"></div>
+            
         <?php $__errorArgs = ['confirm-pw'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -66,38 +110,9 @@ $message = $__bag->first($__errorArgs[0]); ?>
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
 unset($__errorArgs, $__bag); ?>
-
-        <?php $__errorArgs = ['profile-img'];
-$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
-if ($__bag->has($__errorArgs[0])) :
-if (isset($message)) { $__messageOriginal = $message; }
-$message = $__bag->first($__errorArgs[0]); ?>
-        <p class="text-warning"><?php echo e(__('data.register.error.profile_img')); ?></p>
-        <?php unset($message);
-if (isset($__messageOriginal)) { $message = $__messageOriginal; }
-endif;
-unset($__errorArgs, $__bag); ?>
+        </div>
         
-        <div class="custom-bdr p-3 mb-4 rounded d-flex align-items-center">
-            <label for="nama" class="custom-txt fw-bold resp-form-text l-side-form"><?php echo e(__('data.register.username.title')); ?></label>
-            <input class="ipt-form" type="text" placeholder="<?php echo e(__('data.register.username.placeholder')); ?>" id="nama" name="user_name">
-        </div>            
-        <div class="custom-bdr p-3 mb-4 rounded d-flex align-items-center">
-            <label for="email" class="custom-txt fw-bold resp-form-text l-side-form"><?php echo e(__('data.register.email.title')); ?></label>
-            <input class="ipt-form" type="email" placeholder="<?php echo e(__('data.register.email.placeholder')); ?>" id="email" name="email">
-        </div>  
-
-        <div class="custom-bdr p-3 mb-4 rounded d-flex align-items-center">
-            <label for="password" class="custom-txt fw-bold resp-form-text l-side-form"><?php echo e(__('data.register.password.title')); ?></label>
-            <input class="ipt-form" type="password" placeholder="<?php echo e(__('data.register.password.placeholder')); ?>" id="password" name="pw">
-        </div>  
-        
-        <div class="custom-bdr p-3 mb-4 rounded d-flex align-items-center">
-            <label for="confirm-password" class="custom-txt fw-bold resp-form-text l-side-form"><?php echo e(__('data.register.confirm_password.title')); ?></label>
-            <input class="ipt-form h-100" type="password" placeholder="<?php echo e(__('data.register.confirm_password.placeholder')); ?>" id="confirm-password" name="confirm-pw">
-        </div>  
-
-        
+     
 
         <br>
         <div class="w-100 d-flex justify-content-end">

@@ -42,18 +42,18 @@
       <?php else: ?>
         <div class="custom-crd container">
           <?php $__currentLoopData = $pass_data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div class="custom-bg rounded text-light p-2 card-size">
+            <div class="custom-bg-card rounded text-light p-2 card-size">
               <div class="pb-1">
-                <div class="rounded border-0" style="width:100%; height: 140px; background-image: url(<?php echo e($data->image); ?>); background-size: cover; background-position: center center; background-repeat: no-repeat"></div>
+                <div class="rounded border-0" style="width:100%; height: 250px; background-image: url(<?php echo e($data->image); ?>); background-size: cover; background-position: center center; background-repeat: no-repeat"></div>
               </div>
-              <div class="">
-                <div class="crd-title fw-bold pb-2"><?php echo e($data->name); ?></div>
+              <div class="mt-2">
+                <div class="crd-title custom-txt fw-bold pb-2"><?php echo e($data->name); ?></div>
                 <?php if(app()->getLocale() == "id"): ?>
-                  <div class="fs-6 text-reset desc-card"><?php echo e($data->description_id); ?></div>
+                  <div class="fs-6 desc-card"><?php echo e($data->description_id); ?></div>
                 <?php else: ?>
-                  <div class="fs-6 text-reset desc-card"><?php echo e($data->description_en); ?></div>
+                  <div class="fs-6 desc-card"><?php echo e($data->description_en); ?></div>
                 <?php endif; ?>
-                <a href="<?php echo e(route('review', ['tourist_attraction_id' => $data->id])); ?>" class="btn-detail">Detail</a>
+                  <a href="<?php echo e(route('review', ['tourist_attraction_id' => $data->id])); ?>" class="btn-detail">Detail</a>
               </div>
             </div>
             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
